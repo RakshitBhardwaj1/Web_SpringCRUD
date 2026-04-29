@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddStudent from "./components/AddStudent";
+import StudentList from "./components/StudentList";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-shell">
+      <header className="app-header">
+        <div className="app-badge">Registrar Console</div>
+        <h1 className="app-title">Student Management System</h1>
+        <p className="app-subtitle">Manage records with a clean, formal interface.</p>
       </header>
+
+      <main className="content-grid">
+        <section className="content-col">
+          <AddStudent refresh={() => window.location.reload()} />
+        </section>
+        <section className="content-col">
+          <StudentList />
+        </section>
+      </main>
     </div>
   );
 }
